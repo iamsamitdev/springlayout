@@ -27,26 +27,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Samit</td>
-                        <td>Koyom</td>
-                        <td>samit@gmail.com</td>
+
+                    <tr th:each="student: ${list}">
+                        <td th:text="${student.id}"></td>
+                        <td th:text="${student.firstName}"></td>
+                        <td th:text="${student.lastName}"></td>
+                        <td th:text="${student.email}"></td>
                         <td style="width: 160px;">
-                            <a href="#" class="btn btn-warning">Edit</a>
-                            <a href="#" class="btn btn-danger">Delete</a>
+                            <a th:href="@{'/backend/editstudent/'+${student.id}}" class="btn btn-warning">Edit</a>
+                            <a th:href="@{'/backend/deletestudent/'+${student.id}}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Wichai</td>
-                        <td>Jaidee</td>
-                        <td>wichai@gmail.com</td>
-                        <td style="width: 160px;">
-                            <a href="#" class="btn btn-warning">Edit</a>
-                            <a href="#" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
 
