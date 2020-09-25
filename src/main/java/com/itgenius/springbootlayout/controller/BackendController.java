@@ -96,4 +96,10 @@ public class BackendController {
         return new ModelAndView("redirect:/backend/student");
     }
 
+    // Product List
+    @GetMapping(value = "/backend/product")
+    public String product(){
+        return "backend/product";
+    }
+
 }
